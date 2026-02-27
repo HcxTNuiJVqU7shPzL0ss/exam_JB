@@ -1,7 +1,8 @@
-"""Module for init, lesson 02, Exam directory.
+"""Module for init, lesson 02, week 07 directory.
 
-This directory contains OG work, off course work,
-as well as the work done for 2025/2026 course.
+This directory contains off course work, as well as the work
+done for 2025/2026 course.
+Used for the examination.
 """
 
 #####################################################################

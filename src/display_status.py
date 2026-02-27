@@ -1,11 +1,10 @@
-"""Module for init, lesson 02, Exam directory.
+"""Module for Lesson 02, Exam.
 
-This directory contains OG work, off course work,
-as well as the work done for 2025/2026 course.
+View to print game status.
+Moved function to player.
 """
 
 #####################################################################
-#
 # Copyright 2026 gnoff
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,5 +19,16 @@ as well as the work done for 2025/2026 course.
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 #####################################################################
+
+
+import emoji
+
+
+def print_status(game_grid, score):
+    """Use to display the board grid and number of points."""
+    print(f'>>> {emoji.emojize(':strawberry:')} '
+          f'Fruit Loop {emoji.emojize(':watermelon:')} <<<')
+    print('--------------------------------------\n')
+    print(f'You have {score} points.\n')
+    print(game_grid)

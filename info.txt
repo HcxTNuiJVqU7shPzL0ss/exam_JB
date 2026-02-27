@@ -1,0 +1,5 @@
+No additional code will be added to this part of the repo for
+examination.
+
+It is a requirement to create a fork from the template
+and use this, hence will need to have duplicated code.

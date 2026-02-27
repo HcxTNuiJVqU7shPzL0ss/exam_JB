@@ -1,7 +1,6 @@
-"""Module for init, lesson 02, Exam directory.
+"""Module for init, Exam.
 
-This directory contains OG work, off course work,
-as well as the work done for 2025/2026 course.
+Directory: tests.
 """
 
 #####################################################################
