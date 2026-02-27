@@ -28,7 +28,7 @@ import emoji
 
 # pylint: disable=import-error
 from mypackage.pickups import (pickup_list, chest_list, key_list,
-                                   fertile_generate)
+                                   fertile_generate, fertile)
 from mypackage.my_base_functions import press_continue
 # pylint: enable=import-error
 
@@ -191,7 +191,8 @@ class Player:
             if isinstance(maybe_item, item):
                 print('')
                 # we found something, handle score
-                if maybe_item.type == pickup_list[0].type:
+                if (maybe_item.type == pickup_list[0].type or
+                        maybe_item.type == fertile[0].type):
                     self.score += maybe_item.value
                     print(f"You found a {maybe_item.name}, "
                           f"+{maybe_item.value} points.")
