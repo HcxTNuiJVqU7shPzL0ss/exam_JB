@@ -25,8 +25,8 @@ from colorama import Back
 
 
 # pylint: disable=import-error
-from .pickups import pickup_list, trap_list, chest_list, key_list
-from .my_base_functions import press_continue, y_or_n
+from pickups import pickup_list, trap_list, chest_list, key_list
+from my_base_functions import press_continue, y_or_n
 # pylint: enable=import-error
 
 

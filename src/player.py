@@ -27,9 +27,9 @@ import emoji
 
 
 # pylint: disable=import-error
-from .pickups import (pickup_list, chest_list, key_list,
+from pickups import (pickup_list, chest_list, key_list,
                      fertile_generate)
-from .my_base_functions import press_continue
+from my_base_functions import press_continue
 # pylint: enable=import-error
 
 
