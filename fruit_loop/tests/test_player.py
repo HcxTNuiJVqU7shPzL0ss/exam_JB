@@ -23,7 +23,7 @@ Exam Version 3 - S --> Use TDD to test some of the functions
 
 
 # pylint: disable=import-error
-from ..src.player import Player
+from ..src.mypackage.player import Player
 # pylint: enable=import-error
 
 

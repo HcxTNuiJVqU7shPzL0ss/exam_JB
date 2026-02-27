@@ -23,19 +23,20 @@ This is the file from which you run the game.
 
 
 # pylint: disable=import-error
-from grid import Grid
-from player import Player
+from mypackage.grid import Grid
+from mypackage.player import Player
 
-import pickups
+from mypackage.pickups import randomize, Item
 
 # Use to handle player movement
-from move_player_command import move_commands
+from mypackage.move_player_command import move_commands
 
 # Use for printing inventory and help info
-from print_to_user_command import print_commands, print_welcome_info
+from mypackage.print_to_user_command import (print_commands,
+                                             print_welcome_info)
 
 # Use for recurring functions
-from my_base_functions import press_continue, press_exit
+from mypackage.my_base_functions import press_continue, press_exit
 # pylint: enable=import-error
 
 
@@ -63,7 +64,7 @@ def main():
     # Create walls around the board + some inside
     g.make_walls()
     # Randomly create and place items on board
-    pickups.randomize(g)
+    randomize(g)
 
 
     # List of move player commands
@@ -104,7 +105,7 @@ def main():
             y_c = coordinates[1]
 
             # Handle any movement and update score
-            player.move_happening(x_c, y_c, g, pickups.Item)
+            player.move_happening(x_c, y_c, g, Item)
         # Check if command as of: I, H, P
         elif command in print_info_commands:
             print_commands(command, inventory, g)
