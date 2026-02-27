@@ -23,12 +23,11 @@ Use to handle print to user commands.
 
 from colorama import Back
 
+
 # pylint: disable=import-error
-from pickups import pickup_list, trap_list, chest_list, key_list
+from .pickups import pickup_list, trap_list, chest_list, key_list
+from .my_base_functions import press_continue, y_or_n
 # pylint: enable=import-error
-
-
-from my_funct_dir.my_base_functions import press_continue, y_or_n
 
 
 def print_commands(command_check, inventory_list, g):

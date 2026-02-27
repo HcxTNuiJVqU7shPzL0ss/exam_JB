@@ -5,6 +5,8 @@
 
 ## Programmering med Python, TAP HT25 D  
 
+Student: Jan Berglund (gnoff)  
+
 ---
 
 ## Summary  

@@ -1,7 +1,7 @@
-"""Module for init, lesson 02, Exam directory.
+"""Module for init, Exam directory, src.
 
-This directory contains OG work, off course work,
-as well as the work done for 2025/2026 course.
+This directory contains work done for 2025/2026 TAP HT 25D course.
+Specifically handling the examination part of course 2.
 """
 
 #####################################################################

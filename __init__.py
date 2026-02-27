@@ -1,8 +1,7 @@
-"""Module for init, lesson 02, week 07 directory.
+"""Module for init, Exam directory, repo base.
 
-This directory contains off course work, as well as the work
-done for 2025/2026 course.
-Used for the examination.
+This directory contains work done for 2025/2026 TAP HT 25D course.
+Specifically handling the examination part of course 2.
 """
 
 #####################################################################

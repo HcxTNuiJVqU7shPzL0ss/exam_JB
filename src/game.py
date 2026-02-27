@@ -23,22 +23,20 @@ This is the file from which you run the game.
 
 
 # pylint: disable=import-error
-from grid import Grid
-from player import Player
+from .grid import Grid
+from .player import Player
 
 import pickups
 
 # Use to handle player movement
-from move_player_command import move_commands
+from .move_player_command import move_commands
 
 # Use for printing inventory and help info
-from print_to_user_command import print_commands, print_welcome_info
+from .print_to_user_command import print_commands, print_welcome_info
+
+# Use for recurring functions
+from .my_base_functions import press_continue, press_exit
 # pylint: enable=import-error
-
-
-# Note that these functions are located in a different
-# directory
-from my_funct_dir.my_base_functions import press_continue, press_exit
 
 
 def main():

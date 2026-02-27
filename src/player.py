@@ -26,14 +26,10 @@ Also handles interaction, like movement.
 import emoji
 
 
-# Note that these functions are located in a different
-# directory
-from my_funct_dir.my_base_functions import press_continue
-
-
 # pylint: disable=import-error
 from .pickups import (pickup_list, chest_list, key_list,
                      fertile_generate)
+from .my_base_functions import press_continue
 # pylint: enable=import-error
 
 
