@@ -3,6 +3,13 @@
 Player view.
 This contains the Class which creates the player.
 Also handles interaction, like movement.
+Regarding exam requirements, this file implements:
+Version 1 - C
+Version 1 - E
+Version 1 - G
+Version 2 - I
+Version 2 - K
+Version 3 - O
 """
 
 #####################################################################
@@ -30,22 +37,25 @@ import emoji
 from mypackage.pickups import (pickup_list, chest_list, key_list,
                                    fertile_generate, fertile)
 from mypackage.my_base_functions import press_continue
+# Access constants
+from mypackage.constants import (GRACE_START, STEPS_START,
+                                 SCORE_START, NEG_START)
 # pylint: enable=import-error
 
 
 class Player:
     """Use for Class Player."""
 
-    grace_cnt = 0
-    steps = 0
+    grace_cnt = GRACE_START
+    steps = STEPS_START
 
     def __init__(self, x, y):
         """Use to create an object of Player."""
         self.pos_x = x
         self.pos_y = y
-        self.score = 0
+        self.score = SCORE_START
         self.inventory = []
-        self.use_neg = False
+        self.use_neg = NEG_START
 
 
     def print_status(self, game_grid):
@@ -80,7 +90,7 @@ class Player:
     def can_move(self, x, y, grid):
         """Use to check that you can move.
 
-        # Exam Version 1: C (Player not allowed
+        Exam Version 1: C (Player not allowed
         to walk through walls).
         """
         check_x = self.pos_x + x

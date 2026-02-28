@@ -1,6 +1,8 @@
 """Module for Lesson 02, Exam.
 
 Use to handle print to user commands.
+Regarding exam requirements, this file implements:
+Version 1 - F
 """
 
 #####################################################################
@@ -37,7 +39,7 @@ def print_commands(command_check, inventory_list, g):
     A valid command was entered, as of:
     i: Print user inventory
     h: Help == Print help info
-    # Exam Version 1: F ('i' prints user inventory).
+    Exam Version 1: F ('i' prints user inventory).
     """
     help_info = ('\n--------------------------------------\n\n'
                  'Your available commands are\n\n'

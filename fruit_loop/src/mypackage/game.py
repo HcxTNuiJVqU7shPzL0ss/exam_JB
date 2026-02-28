@@ -1,7 +1,10 @@
 """Module for Lesson 02, Exam.
 
 Main view.
-This is the file from which you run the game.
+This is the file from which you run the game, it acts as main.
+Need to run the game as a module, from src folder.
+Regarding exam requirements, this file implements:
+Version 1 - A
 """
 
 #####################################################################
@@ -23,9 +26,9 @@ This is the file from which you run the game.
 
 
 # pylint: disable=import-error
+# Base features
 from mypackage.grid import Grid
 from mypackage.player import Player
-
 from mypackage.pickups import randomize, Item
 
 # Use to handle player movement
@@ -37,6 +40,9 @@ from mypackage.print_to_user_command import (print_commands,
 
 # Use for recurring functions
 from mypackage.my_base_functions import press_continue, press_exit
+
+# Access constants
+from mypackage.constants import WIDTH, HEIGHT
 # pylint: enable=import-error
 
 
@@ -44,11 +50,15 @@ def main():
     """Use as module for Main.
 
     Exam: The Game "Fruit Loop".
+    When in src folder, run game as of:
+    python -m mypackage.game
     """
     # Set the width of the board
-    width = 37
+    # width = 37
+    width = WIDTH
     # Set the height of the board
-    height = 13
+    # height = 13
+    height = HEIGHT
 
     # Exam Version 1: A (Player starts in middle of board)
     # Set the player start position in the middle of the board

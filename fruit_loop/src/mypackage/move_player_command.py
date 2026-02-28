@@ -1,6 +1,8 @@
 """Module for Lesson 02, Exam.
 
 Use to handle move player commands.
+Regarding exam requirements, this file implements:
+Version 1 - B
 """
 
 #####################################################################
@@ -32,7 +34,7 @@ def move_commands(command_check, player_active, g_active):
     Can only move if there is no wall in the way.
     If attempting to move through a wall, it is not
     allowed.
-    # Exam Version 1: B (Player can move in all 4 directions).
+    Exam Version 1: B (Player can move in all 4 directions).
     """
     # Ensure movement will only happen in one direction, x or y
     x = 0

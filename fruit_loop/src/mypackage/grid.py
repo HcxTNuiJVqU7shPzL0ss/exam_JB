@@ -2,6 +2,8 @@
 
 Grid view.
 This contains the Class which builds the board.
+Regarding exam requirements, this file implements:
+Version 1 - H
 """
 
 #####################################################################
@@ -58,7 +60,11 @@ class Grid:
         self.data[y][x] = value
 
     def set_player(self, player):
-        """Use to handle player."""
+        """Use to handle player.
+
+        Called from main (game), this method stores the
+        attribute in player, same object as in main file.
+        """
         self.player = player
 
     def clear(self, x, y):

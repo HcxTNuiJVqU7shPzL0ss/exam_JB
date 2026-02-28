@@ -1,6 +1,11 @@
 """Module for Lesson 02, Exam.
 
 Pickups view.
+Regarding exam requirements, this file implements:
+Version 1 - D
+Version 2 - I
+Version 2 - K
+Version 2 - L
 """
 
 #####################################################################
