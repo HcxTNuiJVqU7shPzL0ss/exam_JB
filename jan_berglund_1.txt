@@ -1,0 +1,65 @@
+Jan "gnoff" Berglund - Copyright 2026
+
+Programmering med Python, 20yhp
+
+Examination TAPHT25
+
+GitHub repo:
+https://github.com/HcxTNuiJVqU7shPzL0ss/exam_JB
+
+Requirements in file (under project root):
+requirements.txt
+
+Licensed as of (under project root):
+LICENSE
+
+---
+
+Instructions to run the game
+
+1)
+Ensure you are in the project root:
+exam_jb
+
+2)
+Navigate to fruit_loop/src folder:
+cd fruit_loop/src
+
+3)
+Run as a module (game.py acts as main):
+python -m mypackage.game
+
+---
+
+01: Skapa en Fork från GitHub exam template
+  --> Done
+
+02: Kontrollera att ditt repo är publikt
+  --> Done
+
+03: Skapa en textfil i PyCharm
+  --> Done
+
+04: Namnge filen ditt_namn_1.txt
+  --> Done
+
+05: Lägg till en länk till ditt GitHub-repo i filen
+https://github.com/HcxTNuiJVqU7shPzL0ss/exam_JB
+  --> Done
+
+06: Filen ska berätta vilka av kraven du har arbetat med
+A, B, C, D, E, F, G, H
+I, K, L
+O, S
+  --> Done
+
+07: Eventuella andra kommentarer
+<> Länk till repo finns i denna fil
+<> Instruktioner från var man startar spelet finns i denna fil
+<> Behöver köras som en modul
+<> Se fil "requirements.txt"
+<> Emoji används på ett par ställen,
+   dessa syns inte om man kör i ex Windows CMD
+  --> Done
+
+---

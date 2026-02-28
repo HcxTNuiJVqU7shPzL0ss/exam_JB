@@ -10,4 +10,4 @@ from setuptools import setup, find_packages
 #import pathlib
 
 
-setup(name='l02', version='0.0.1', packages=find_packages())
+setup(name='l02', version='0.0.2', packages=find_packages())
