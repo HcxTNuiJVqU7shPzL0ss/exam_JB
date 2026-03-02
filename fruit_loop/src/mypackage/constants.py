@@ -22,10 +22,16 @@ PEP 8
 #####################################################################
 
 
+from colorama import Back
+
+
 # Width of the board
 WIDTH = 37
 # Height of the board
 HEIGHT = 13
+
+# Highlight in green
+HIGHLIGHT = f'{' ' + Back.GREEN + ' ' + Back.RESET + ' '}'
 
 # Move up
 UP = 'w'

@@ -230,7 +230,7 @@ class Player:
             # Handle "The Floor is Lava"
             self.handle_lava_score(grace_moves)
 
-            # Handle fertile addition
+            # Handle fertile addition every 25 step
             if self.steps % 25 == 0:
                 fertile_generate(g)
                 press_continue()

@@ -23,9 +23,6 @@ Version 1 - F
 #####################################################################
 
 
-from colorama import Back
-
-
 # pylint: disable=import-error
 from mypackage.pickups import (pickup_list, trap_list,
                                chest_list, key_list)
@@ -33,7 +30,8 @@ from mypackage.my_base_functions import press_continue, y_or_n
 # Access constants
 from mypackage.constants import (UP, DOWN, LEFT, RIGHT,
                                  QUIT, EXIT,
-                                 INVENTORY, HELP, PRINTINFO)
+                                 INVENTORY, HELP, PRINTINFO,
+                                 HIGHLIGHT)
 # pylint: enable=import-error
 
 
@@ -76,26 +74,26 @@ def print_commands(command_check, inventory_list, g):
 
 def print_symbols(g):
     """Use to print information about board symbols."""
-    print(f'You are the player on the board, starting in the '
-          f'middle, look for your marker: '
-          f'{Back.GREEN + g.gamer + Back.RESET}\n\n'
+    print(f'\nYou are the player on the board, starting in the '
+          f'middle, look for your marker:'
+          f'{HIGHLIGHT + g.gamer + HIGHLIGHT}\n\n'
           f'Around the edges are impassable walls, signified '
-          f'by the following: '
-          f'{Back.GREEN + g.wall + Back.RESET}\n\n'
+          f'by the following:'
+          f'{HIGHLIGHT + g.wall + HIGHLIGHT}\n\n'
           f'There are a few internal walls, which cannot be '
           f'passed, unless you have found a pickaxe. These '
-          f'internal walls looks like this: '
-          f'{Back.GREEN + g.unstable_wall + Back.RESET}\n\n'
+          f'internal walls looks like this:'
+          f'{HIGHLIGHT + g.unstable_wall + HIGHLIGHT}\n\n'
           f'The goal of this exciting game is to pick up things '
-          f'from the board, items can be found where you see: '
-          f'{Back.GREEN + pickup_list[0].symbol + Back.RESET}\n\n'
-          f'There are chests on the board, marked with '
-          f'{Back.GREEN + chest_list[0].symbol + Back.RESET}, '
-          f'to be able to pick up a chest, you '
-          f'first need a key, these are marked with '
-          f'{Back.GREEN + key_list[0].symbol + Back.RESET}\n\n'
-          f'Try to avoid the traps, marked with '
-          f'{Back.GREEN + trap_list[0].symbol + Back.RESET}')
+          f'from the board, items can be found where you see:'
+          f'{HIGHLIGHT + pickup_list[0].symbol + HIGHLIGHT}\n\n'
+          f'There are chests on the board, marked with'
+          f'{HIGHLIGHT + chest_list[0].symbol + HIGHLIGHT.rstrip()},'
+          f' to be able to pick up a chest, you '
+          f'first need a key, these are marked with'
+          f'{HIGHLIGHT + key_list[0].symbol + HIGHLIGHT}\n\n'
+          f'Try to avoid the traps, marked with'
+          f'{HIGHLIGHT + trap_list[0].symbol + HIGHLIGHT}')
 
 
 def print_welcome_info(g):
