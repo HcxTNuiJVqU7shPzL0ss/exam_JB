@@ -141,7 +141,7 @@ class Player:
         """
         print(f'Oh no, you found a {name}!\n'
               f'You lost {value} points.')
-        if self.score >= 10 or self.use_neg:
+        if self.score >= abs(value) or self.use_neg:
             self.score += value
         else:
             self.score = 0

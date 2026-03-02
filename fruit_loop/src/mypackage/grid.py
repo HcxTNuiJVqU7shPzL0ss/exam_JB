@@ -27,20 +27,32 @@ Version 1 - H
 import random
 
 
+# pylint: disable=import-error
+# Access constants
+from mypackage.constants import EMPTY, WALL, US_WALL, GAMER
+# pylint: enable=import-error
+
+
 class Grid:
     """Use to represent the board.
 
-    It is possible to change the standard size and signs for
+    It is possible to change the standard size, and signs for
     different squares.
     """
 
-    empty = '.'             # Indicates an empty square
-    wall = '■'              # Indicates a wall
-    unstable_wall = '#'     # Indicates a wall that may be breached
-    gamer = '@'             # Indicates the current gamer
+    empty = EMPTY               # Indicates an empty square
+    wall = WALL                 # Indicates a wall
+    unstable_wall = US_WALL     # Ind. a wall that may be breached
+    gamer = GAMER               # Indicates the current gamer
 
     def __init__(self, player, width, height):
-        """Use to create an object of the Class Grid."""
+        """Use to create an object of the Class Grid.
+
+        Initialize the attributes of a Grid object when the object
+        is formed.
+        Constructor (initializer) automatically called when
+        creating a new instance of this class.
+        """
         # The board if stored in a list of lists.
         # List comprehension is used to place the sign for
         # "empty" on each place on the board.

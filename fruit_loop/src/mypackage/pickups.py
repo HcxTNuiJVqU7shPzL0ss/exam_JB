@@ -32,14 +32,24 @@ import random
 from dataclasses import dataclass
 
 
+# pylint: disable=import-error
+# Access constants
+from mypackage.constants import (OG_T, OG_V, OG_V_F, OG_S,
+                                 TRAP_T, TRAP_V, TRAP_S,
+                                 CHEST_T, CHEST_V, CHEST_S,
+                                 KEY_T, KEY_V, KEY_S,
+                                 FERT_T, FERT_V, FERT_S)
+# pylint: enable=import-error
+
+
 # Use a dataclass since not enough public functions
 # as to properly use a "regular" Class
 @dataclass
 class Item:
     """Use to represent items that can be picked up."""
 
-    def __init__(self, type_i = 'og', name = '',
-                 value = 10, symbol = '?'):
+    def __init__(self, type_i = OG_T, name = '',
+                 value = OG_V, symbol = OG_S):
         """Use to initialize an object.
 
         # Exam Version 1: D (Value is 20 for fruits, not 10)
@@ -64,54 +74,54 @@ class Item:
 # apple, strawberry, cherry, watermelon, cucumber
 # The others keep the default 10 points
 pickup_list = [Item(name = 'Carrot'),  # Root veggie
-               Item(name = 'Apple', value = 20),
-               Item(name = 'Strawberry', value = 20),
-               Item(name = 'Cherry', value = 20),
-               Item(name = 'Watermelon', value = 20),
+               Item(name = 'Apple', value = OG_V_F),
+               Item(name = 'Strawberry', value = OG_V_F),
+               Item(name = 'Cherry', value = OG_V_F),
+               Item(name = 'Watermelon', value = OG_V_F),
                Item(name = 'Radish'),  # Root veggie
-               Item(name = 'Cucumber', value = 20),
+               Item(name = 'Cucumber', value = OG_V_F),
                Item(name = 'Meatball')  # Protein
                ]
 
 # Use to add traps on the grid
 # Exam Version 2: I (Add traps to the board, -10 points, traps shall
 # remain on the board so gamer can fall into it multiple times)
-trap_list = [Item(type_i = 'trap', name = 'Bear trap',
-                  value = -10, symbol = 't'),
-             Item(type_i = 'trap', name = 'Bird snare',
-                  value = -10, symbol = 't')]
+trap_list = [Item(type_i = TRAP_T, name = 'Bear trap',
+                  value = TRAP_V, symbol = TRAP_S),
+             Item(type_i = TRAP_T, name = 'Bird snare',
+                  value = TRAP_V, symbol = TRAP_S)]
 
 # Use to add chests on the grid
 # Exam Version 2: K (Add chests to the board)
 # If you land on a chest, and have at least one key in inventory,
 # you will pick up the chest, value 100 points
 # The key will be used up
-chest_list = [Item(type_i = 'chest', name = 'Earth chest',
-                   value = 100, symbol = 'c'),
-              Item(type_i = 'chest', name = 'Wind chest',
-                   value = 100, symbol = 'c')]
+chest_list = [Item(type_i = CHEST_T, name = 'Earth chest',
+                   value = CHEST_V, symbol = CHEST_S),
+              Item(type_i = CHEST_T, name = 'Wind chest',
+                   value = CHEST_V, symbol = CHEST_S)]
 
 # Use to add keys on the grid
 # Exam Version 2: K (Add keys to the board)
 # If you land on a chest, and have at least one key in inventory,
 # you will pick up the chest
 # The key will be used up
-key_list = [Item(type_i = 'key', name = 'key',
-                 value = 0, symbol = 'k'),
-            Item(type_i = 'key', name = 'key',
-                  value = 0, symbol = 'k')]
+key_list = [Item(type_i = KEY_T, name = 'key',
+                 value = KEY_V, symbol = KEY_S),
+            Item(type_i = KEY_T, name = 'key',
+                  value = KEY_V, symbol = KEY_S)]
 
 # Use to collect all board items in one list
 place_list = pickup_list + trap_list + chest_list + key_list
 
 # Used for fertile addons
 # Exam Version 2: L (Every 25 step adds new points item to board)
-fertile = [Item(type_i = 'fertile', name = 'mango',
-                value = 25, symbol = '*'),
-           Item(type_i = 'fertile', name = 'lime',
-                value = 25, symbol = '*'),
-           Item(type_i = 'fertile', name = 'orange',
-                value = 25, symbol = '*')
+fertile = [Item(type_i = FERT_T, name = 'mango',
+                value = FERT_V, symbol = FERT_S),
+           Item(type_i = FERT_T, name = 'lime',
+                value = FERT_V, symbol = FERT_S),
+           Item(type_i = FERT_T, name = 'orange',
+                value = FERT_V, symbol = FERT_S)
            ]
 
 

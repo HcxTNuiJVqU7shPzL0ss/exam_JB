@@ -51,13 +51,13 @@ def move_commands(command_check, player_active, g_active):
         y = 0
     # Move happens below, depending on command
     else:
-        if command_check == RIGHT:  # move right
+        if command_check == RIGHT:      # move right
             x = 1
-        elif command_check == LEFT: # move left
+        elif command_check == LEFT:     # move left
             x = -1
-        elif command_check == UP: # move up
+        elif command_check == UP:       # move up
             y = -1
-        elif command_check == DOWN: # move down
+        elif command_check == DOWN:     # move down
             y = 1
 
     return [x, y]

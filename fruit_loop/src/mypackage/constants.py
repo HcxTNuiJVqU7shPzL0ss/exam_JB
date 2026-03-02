@@ -30,33 +30,33 @@ WIDTH = 37
 # Height of the board
 HEIGHT = 13
 
-# Highlight in green
+# Highlight in green for symbol print
 HIGHLIGHT = f'{' ' + Back.GREEN + ' ' + Back.RESET + ' '}'
 
-# Move up
+# Move up command
 UP = 'w'
-# Move down
+# Move down command
 DOWN = 's'
-# Move left
+# Move left command
 LEFT = 'a'
-# Move right
+# Move right command
 RIGHT = 'd'
 
-# Quit game
+# Quit game command
 QUIT = 'q'
-# Exit game
+# Exit game command
 EXIT = 'x'
 
 # Inventory command
 INVENTORY = 'i'
 # Help command
 HELP = 'h'
-# Print symbol information
+# Print symbol information command
 PRINTINFO = 'p'
 
 # Grace period starts at 0
 GRACE_START = 0
-# Grace period set with this score
+# Grace period set with this value
 GRACE_SET = 5
 
 # Number of steps taken starts at 0
@@ -67,3 +67,53 @@ SCORE_START = 0
 
 # Default for allowing negative score is False
 NEG_START = False
+
+# Symbol for empty coordinate
+EMPTY = '.'
+# Symbol for impassable wall
+WALL = '■'
+# Symbol for unstable wall
+US_WALL = '#'
+# Symbol for gamer / player marker
+GAMER = '@'
+
+# OG items list
+# Type
+OG_T = 'og'
+# Value
+OG_V = 10
+OG_V_F = 20
+# Symbol
+OG_S = '?'
+
+# Traps items list
+# Type
+TRAP_T = 'trap'
+# Value
+TRAP_V = -10
+# Symbol
+TRAP_S = 't'
+
+# Chest items list
+# Type
+CHEST_T = 'chest'
+# Value
+CHEST_V = 100
+# Symbol
+CHEST_S = 'c'
+
+# Keys items list
+# Type
+KEY_T = 'key'
+# Value
+KEY_V = 0
+# Symbol
+KEY_S = 'k'
+
+# Fertile items list
+# Type
+FERT_T = 'fertile'
+# Value
+FERT_V = 25
+# Symbol
+FERT_S = '*'

@@ -57,10 +57,8 @@ def main():
     python -m mypackage.game
     """
     # Set the width of the board
-    # width = 37
     width = WIDTH
     # Set the height of the board
-    # height = 13
     height = HEIGHT
 
     # Exam Version 1: A (Player starts in middle of board)
@@ -76,7 +74,7 @@ def main():
     g.set_player(player)
     # Create walls around the board + some inside
     g.make_walls()
-    # Randomly create and place items on board
+    # Create and place items randomly on board
     randomize(g)
 
 
@@ -122,9 +120,11 @@ def main():
         # Check if command as of: I, H, P
         elif command in print_info_commands:
             print_commands(command, inventory, g)
+        # Highlight any command input not handled
         elif command not in exit_commands:
             print('\nThat command is not known.\n'
-                  'Please use "h" to check what the valid commands are.')
+                  'Please use "h" to check what the valid '
+                  'commands are.')
             press_continue()
 
 
