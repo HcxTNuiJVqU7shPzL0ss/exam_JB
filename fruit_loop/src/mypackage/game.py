@@ -42,7 +42,10 @@ from mypackage.print_to_user_command import (print_commands,
 from mypackage.my_base_functions import press_continue, press_exit
 
 # Access constants
-from mypackage.constants import WIDTH, HEIGHT
+from mypackage.constants import (WIDTH, HEIGHT,
+                                 UP, DOWN, LEFT, RIGHT,
+                                 QUIT, EXIT,
+                                 INVENTORY, HELP, PRINTINFO)
 # pylint: enable=import-error
 
 
@@ -78,16 +81,16 @@ def main():
 
 
     # List of move player commands
-    player_move_commands = ['a', 's', 'd', 'w']
+    player_move_commands = [LEFT, DOWN, RIGHT, UP]
 
     # List of exit commands
-    exit_commands = ['q', 'x']
+    exit_commands = [QUIT, EXIT]
 
     # List of print info commands
-    print_info_commands = ['i', 'h', 'p']
+    print_info_commands = [INVENTORY, HELP, PRINTINFO]
 
-    # Default value for command
-    command = 'a'
+    # Default start value for command
+    command = LEFT
 
     # Print welcome info and check if to use negative values
     # use_neg is True if to allow below 0 score, else False

@@ -1,6 +1,7 @@
 """Module for Lesson 02, Exam, Constants.
 
 Used to store global constants.
+PEP 8
 """
 
 #####################################################################
@@ -21,12 +22,40 @@ Used to store global constants.
 #####################################################################
 
 
-# Set the width of the board
+# Width of the board
 WIDTH = 37
-# Set the height of the board
+# Height of the board
 HEIGHT = 13
 
+# Move up
+UP = 'w'
+# Move down
+DOWN = 's'
+# Move left
+LEFT = 'a'
+# Move right
+RIGHT = 'd'
+
+# Quit game
+QUIT = 'q'
+# Exit game
+EXIT = 'x'
+
+# Inventory command
+INVENTORY = 'i'
+# Help command
+HELP = 'h'
+# Print symbol information
+PRINTINFO = 'p'
+
+# Grace period starts at 0
 GRACE_START = 0
+
+# Number of steps taken starts at 0
 STEPS_START = 0
+
+# Gamer score starts at 0
 SCORE_START = 0
+
+# Default for allowing negative score is False
 NEG_START = False

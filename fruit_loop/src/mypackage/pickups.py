@@ -107,10 +107,10 @@ place_list = pickup_list + trap_list + chest_list + key_list
 # Used for fertile addons
 # Exam Version 2: L (Every 25 step adds new points item to board)
 fertile = [Item(type_i = 'fertile', name = 'mango',
-                value=25, symbol='*'),
+                value = 25, symbol = '*'),
            Item(type_i = 'fertile', name = 'lime',
                 value = 25, symbol = '*'),
-           Item(type_i='fertile', name='orange',
+           Item(type_i = 'fertile', name = 'orange',
                 value = 25, symbol = '*')
            ]
 
@@ -144,5 +144,5 @@ def fertile_generate(grid):
             new_fruit = random.choice(fertile)
             grid.set(x, y, new_fruit)
             print(f'New item {new_fruit} has been added to: '
-                  f'{x}, y:{y}!')
+                  f'x:{x}, y:{y}!')
             break

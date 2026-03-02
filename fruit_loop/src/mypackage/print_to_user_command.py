@@ -30,6 +30,10 @@ from colorama import Back
 from mypackage.pickups import (pickup_list, trap_list,
                                chest_list, key_list)
 from mypackage.my_base_functions import press_continue, y_or_n
+# Access constants
+from mypackage.constants import (UP, DOWN, LEFT, RIGHT,
+                                 QUIT, EXIT,
+                                 INVENTORY, HELP, PRINTINFO)
 # pylint: enable=import-error
 
 
@@ -39,30 +43,32 @@ def print_commands(command_check, inventory_list, g):
     A valid command was entered, as of:
     i: Print user inventory
     h: Help == Print help info
+    p: Print board symbol information
     Exam Version 1: F ('i' prints user inventory).
     """
-    help_info = ('\n--------------------------------------\n\n'
-                 'Your available commands are\n\n'
-                 'W: Move up\n'
-                 'S: Move down\n'
-                 'A: Move left\n'
-                 'D: Move right\n\n'
-                 'I: Print inventory\n'
-                 'H: Display commands\n\n'
-                 'P: Display board symbol information\n\n'
-                 'Q: Quit (quit game)\n'
-                 'X: Exit (exit game)\n'
-                 '\n--------------------------------------')
-    if command_check == 'i':  # print inventory
+    help_info = (f'\n--------------------------------------\n\n'
+                 f'Your available commands are\n\n'
+                 f'{UP.upper()}: Move up\n'
+                 f'{DOWN.upper()}: Move down\n'
+                 f'{LEFT.upper()}: Move left\n'
+                 f'{RIGHT.upper()}: Move right\n\n'
+                 f'{INVENTORY.upper()}: Print inventory\n'
+                 f'{HELP.upper()}: Display commands\n\n'
+                 f'{PRINTINFO.upper()}: Display board symbol '
+                 f'information\n\n'
+                 f'{QUIT.upper()}: Quit (quit game)\n'
+                 f'{EXIT.upper()}: Exit (exit game)\n'
+                 f'\n--------------------------------------')
+    if command_check == INVENTORY:  # print inventory
         if not inventory_list:
             print('\nThe inventory is empty.')
         else:
             print('\nInventory')
             for i, item in enumerate(inventory_list):
                 print(f'{i + 1}: {item}')
-    elif command_check == 'h': # print help
+    elif command_check == HELP: # print help
         print(help_info)
-    elif command_check == 'p':
+    elif command_check == PRINTINFO: # Print board symbol info
         print_symbols(g)
 
     press_continue()
@@ -103,10 +109,10 @@ def print_welcome_info(g):
 
     # Print welcome message and info
     print('\nWelcome to an exciting game: Fruit Loop!')
-    print_commands('h', [], g)
+    print_commands(HELP, [], g)
 
-    print('For help with commands, please select "h" '
-          'as your command.')
+    print(f'For help with commands, please select "{HELP.upper()}" '
+          f'as your command.')
     press_continue()
     print(f'Due to "The Floor is Lava", you will lose one (1) point '
           f'for each movement.\n'
