@@ -23,6 +23,12 @@ Version 1 - B
 #####################################################################
 
 
+# pylint: disable=import-error
+# Access constants
+from mypackage.constants import UP, DOWN, LEFT, RIGHT
+# pylint: enable=import-error
+
+
 def move_commands(command_check, player_active, g_active):
     """Use to check and handle commands for movement.
 
@@ -45,13 +51,13 @@ def move_commands(command_check, player_active, g_active):
         y = 0
     # Move happens below, depending on command
     else:
-        if command_check == 'd':  # move right
+        if command_check == RIGHT:  # move right
             x = 1
-        elif command_check == 'a': # move left
+        elif command_check == LEFT: # move left
             x = -1
-        elif command_check == 'w': # move up
+        elif command_check == UP: # move up
             y = -1
-        elif command_check == 's': # move down
+        elif command_check == DOWN: # move down
             y = 1
 
     return [x, y]

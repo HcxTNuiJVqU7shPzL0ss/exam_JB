@@ -35,11 +35,12 @@ import emoji
 
 # pylint: disable=import-error
 from mypackage.pickups import (pickup_list, chest_list, key_list,
-                                   fertile_generate, fertile)
+                               fertile_generate, fertile)
 from mypackage.my_base_functions import press_continue
 # Access constants
 from mypackage.constants import (GRACE_START, STEPS_START,
-                                 SCORE_START, NEG_START)
+                                 SCORE_START, NEG_START,
+                                 GRACE_SET)
 # pylint: enable=import-error
 
 
@@ -50,7 +51,13 @@ class Player:
     steps = STEPS_START
 
     def __init__(self, x, y):
-        """Use to create an object of Player."""
+        """Use to create an object of Player.
+
+        Initialize the attributes of a Player object when the object
+        is formed.
+        Constructor (initializer) automatically called when
+        creating a new instance of this class.
+        """
         self.pos_x = x
         self.pos_y = y
         self.score = SCORE_START
@@ -112,7 +119,7 @@ class Player:
         """
         if grace:
             # Found an item, add grace period of 5
-            self.grace_cnt = 5
+            self.grace_cnt = GRACE_SET
         else:
             if self.grace_cnt > 0:
                 self.grace_cnt -= 1

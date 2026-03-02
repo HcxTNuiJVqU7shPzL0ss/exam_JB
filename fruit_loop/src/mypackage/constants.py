@@ -50,6 +50,8 @@ PRINTINFO = 'p'
 
 # Grace period starts at 0
 GRACE_START = 0
+# Grace period set with this score
+GRACE_SET = 5
 
 # Number of steps taken starts at 0
 STEPS_START = 0
