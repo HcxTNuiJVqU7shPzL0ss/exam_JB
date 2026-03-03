@@ -24,17 +24,12 @@ Version 3 - S
 #####################################################################
 
 
-# pylint: disable=import-error
 # Access constants
 from mypackage.constants import WIDTH, HEIGHT
 # Access Grid and test file p (player)
 from ..src.mypackage.grid import Grid
 from .test_player import p
-# pylint: enable=import-error
 
-
-# WIDTH = 37
-# HEIGHT = 13
 
 g = Grid(p, WIDTH, HEIGHT)
 

@@ -1,4 +1,4 @@
-"""Module for init, Exam directory, game folder.
+"""Module for init, Exam directory, fruit_loop "base" folder.
 
 This directory contains work done for 2025/2026 TAP HT 25D course.
 Specifically handling the examination part of course 2.

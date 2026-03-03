@@ -25,7 +25,6 @@ Version 1 - A
 #####################################################################
 
 
-# pylint: disable=import-error
 # Base features
 from mypackage.grid import Grid
 from mypackage.player import Player
@@ -46,7 +45,6 @@ from mypackage.constants import (WIDTH, HEIGHT,
                                  UP, DOWN, LEFT, RIGHT,
                                  QUIT, EXIT,
                                  INVENTORY, HELP, PRINTINFO)
-# pylint: enable=import-error
 
 
 def main():

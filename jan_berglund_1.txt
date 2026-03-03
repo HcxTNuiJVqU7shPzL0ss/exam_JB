@@ -34,35 +34,74 @@ python -m mypackage.game
 Examination requirements
 
 01: Skapa en Fork från GitHub exam template
+
   --> Done
 
 02: Kontrollera att ditt repo är publikt
+
   --> Done
 
 03: Skapa en textfil i PyCharm
+
   --> Done
 
 04: Namnge filen ditt_namn_1.txt
+
   --> Done
 
 05: Lägg till en länk till ditt GitHub-repo i filen
 https://github.com/HcxTNuiJVqU7shPzL0ss/exam_JB
+
   --> Done
 
 06: Filen ska berätta vilka av kraven du har arbetat med
 A, B, C, D, E, F, G, H
 I, K, L
 O, S
+
   --> Done
 
 07: Eventuella andra kommentarer
-<> Länk till repo finns i denna fil
-<> Instruktioner gällande var och hur man startar spelet
-   finns i denna fil
-<> Behöver köras som en modul
-<> Se fil "requirements.txt"
-<> Emoji används på ett par ställen,
-   dessa syns inte om man kör i ex Windows CMD
+
+<> Link to repo is in this file
+<> Instructions regarding from where and how to start the game
+   is in this file
+<> Needs to be run as a module
+<> See file "requirements.txt"
+<> Emoji and use of background color is used in some places,
+   these will not print well if running in, e.g., Windows CMD
+   However, the game still runs fine
+<> To ensure I have been as pythonic as possible, have been
+   running pylint and pydocstyle and updating the code based
+   on any warnings.
+<> Run pylint (when installed) from root exam_jb as:
+   pylint fruit_loop
+<> Run pydocstyle (when installed) from root exam_jb as:
+   pydocstyle fruit_loop
+<> Run pytest (when installed) from root exam_jb as:
+   pytest
+
   --> Done
+
+---
+
+Student == **_gnoff_**
+
+---
+
+Copyright 2026 gnoff
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 ---

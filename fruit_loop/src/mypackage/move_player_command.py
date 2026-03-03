@@ -23,10 +23,8 @@ Version 1 - B
 #####################################################################
 
 
-# pylint: disable=import-error
 # Access constants
 from mypackage.constants import UP, DOWN, LEFT, RIGHT
-# pylint: enable=import-error
 
 
 def move_commands(command_check, player_active, g_active):

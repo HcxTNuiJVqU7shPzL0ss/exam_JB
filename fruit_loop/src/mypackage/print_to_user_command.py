@@ -23,7 +23,6 @@ Version 1 - F
 #####################################################################
 
 
-# pylint: disable=import-error
 from mypackage.pickups import (pickup_list, trap_list,
                                chest_list, key_list)
 from mypackage.my_base_functions import press_continue, y_or_n
@@ -32,7 +31,6 @@ from mypackage.constants import (UP, DOWN, LEFT, RIGHT,
                                  QUIT, EXIT,
                                  INVENTORY, HELP, PRINTINFO,
                                  HIGHLIGHT)
-# pylint: enable=import-error
 
 
 def print_commands(command_check, inventory_list, g):

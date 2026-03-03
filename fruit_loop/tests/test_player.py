@@ -24,21 +24,15 @@ Version 3 - S
 #####################################################################
 
 
-# pylint: disable=import-error
 # Access constants
 from mypackage.constants import (GRACE_START, STEPS_START,
                                  SCORE_START, NEG_START)
 # Access Player
 from ..src.mypackage.player import Player
-# pylint: enable=import-error
 
 
 X_START = 0
 Y_START = 0
-# GRACE_START = 0
-# STEPS_START = 0
-# SCORE_START = 0
-# NEG_START = False
 
 p = Player(x=X_START, y=Y_START) # Supply x and y
 

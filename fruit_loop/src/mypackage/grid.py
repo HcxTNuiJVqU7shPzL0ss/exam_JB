@@ -27,10 +27,8 @@ Version 1 - H
 import random
 
 
-# pylint: disable=import-error
 # Access constants
 from mypackage.constants import EMPTY, WALL, US_WALL, GAMER
-# pylint: enable=import-error
 
 
 class Grid:

@@ -32,14 +32,12 @@ import random
 from dataclasses import dataclass
 
 
-# pylint: disable=import-error
 # Access constants
 from mypackage.constants import (OG_T, OG_V, OG_V_F, OG_S,
                                  TRAP_T, TRAP_V, TRAP_S,
                                  CHEST_T, CHEST_V, CHEST_S,
                                  KEY_T, KEY_V, KEY_S,
                                  FERT_T, FERT_V, FERT_S)
-# pylint: enable=import-error
 
 
 # Use a dataclass since not enough public functions

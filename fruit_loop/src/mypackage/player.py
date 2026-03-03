@@ -33,7 +33,6 @@ Version 3 - O
 import emoji
 
 
-# pylint: disable=import-error
 from mypackage.pickups import (pickup_list, chest_list, key_list,
                                fertile_generate, fertile)
 from mypackage.my_base_functions import press_continue
@@ -41,7 +40,6 @@ from mypackage.my_base_functions import press_continue
 from mypackage.constants import (GRACE_START, STEPS_START,
                                  SCORE_START, NEG_START,
                                  GRACE_SET)
-# pylint: enable=import-error
 
 
 class Player:
