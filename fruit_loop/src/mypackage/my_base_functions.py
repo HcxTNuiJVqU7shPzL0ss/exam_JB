@@ -1,4 +1,8 @@
-"""My base user defined functions."""
+"""My base user defined functions.
+
+Created for use in different repo over multiple files,
+copied here for reuse in this repo.
+"""
 
 #####################################################################
 #

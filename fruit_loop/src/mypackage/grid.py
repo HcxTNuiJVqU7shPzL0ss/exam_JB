@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, grid.
 
 Grid view.
 This contains the Class which builds the board.
@@ -66,7 +66,7 @@ class Grid:
         return self.data[y][x]
 
     def set(self, x, y, value):
-        """Use to change what is on a certain position."""
+        """Use to set what is on a certain position."""
         self.data[y][x] = value
 
     def set_player(self, player):
@@ -78,7 +78,7 @@ class Grid:
         self.player = player
 
     def clear(self, x, y):
-        """Use to remove an item from a position."""
+        """Use to remove (clear) an item from a position."""
         self.set(x, y, self.empty)
 
     def __str__(self):
@@ -133,5 +133,5 @@ class Grid:
         return random.randint(1, self.height - 1)
 
     def is_empty(self, x, y):
-        """Use to return True if nothing on the square."""
+        """Use to return True if nothing (empty) on the square."""
         return self.get(x, y) == self.empty

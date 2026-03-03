@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam, Constants.
+"""Module for Lesson 02, Exam, constants.
 
 Used to store global constants.
 PEP 8

@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, game.
 
 Main view.
 This is the file from which you run the game, it acts as main.
@@ -25,7 +25,7 @@ Version 1 - A
 #####################################################################
 
 
-# Base features
+# Base game features
 from mypackage.grid import Grid
 from mypackage.player import Player
 from mypackage.pickups import randomize, Item
@@ -120,9 +120,9 @@ def main():
             print_commands(command, inventory, g)
         # Highlight any command input not handled
         elif command not in exit_commands:
-            print('\nThat command is not known.\n'
-                  'Please use "h" to check what the valid '
-                  'commands are.')
+            print(f'\nThe {command} command is not known.\n'
+                  f'Please use "h" to check what the valid '
+                  f'commands are.')
             press_continue()
 
 

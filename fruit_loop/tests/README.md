@@ -1,11 +1,11 @@
 
-# Fruit Loop  
+# Tests  
 
 ---
 
 ## Folder Explanation  
 
-This folder is the base for running unit tests for the game.  
+This folder is the base for unit tests for the game.  
 
 See [test_grid.py](test_grid.py) in this folder for implemented 
 tests on file [grid.py](../src/mypackage/grid.py).  

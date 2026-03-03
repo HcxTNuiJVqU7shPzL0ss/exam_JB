@@ -1,4 +1,4 @@
-"""Module for init, Exam directory, repo base.
+"""Module for init, Exam directory, repo (exam_jb) base.
 
 This directory contains work done for 2025/2026 TAP HT 25D course.
 Specifically handling the examination part of course 2.

@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, print_to_user_command.
 
 Use to handle print to user commands.
 Regarding exam requirements, this file implements:
@@ -25,7 +25,9 @@ Version 1 - F
 
 from mypackage.pickups import (pickup_list, trap_list,
                                chest_list, key_list)
+
 from mypackage.my_base_functions import press_continue, y_or_n
+
 # Access constants
 from mypackage.constants import (UP, DOWN, LEFT, RIGHT,
                                  QUIT, EXIT,
@@ -110,8 +112,8 @@ def print_welcome_info(g):
     print(f'For help with commands, please select "{HELP.upper()}" '
           f'as your command.')
     press_continue()
-    print(f'Due to "The Floor is Lava", you will lose one (1) point '
-          f'for each movement.\n'
+    print(f'Due to "The Floor is Lava", you will lose one (-1) '
+          f'point for each movement.\n'
           f'Also, traps will have you lose {trap_list[0].value} '
           f'points, they are marked on the map with: '
           f'{trap_list[0]}\n'

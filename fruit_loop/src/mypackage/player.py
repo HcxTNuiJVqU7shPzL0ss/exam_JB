@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, player.
 
 Player view.
 This contains the Class which creates the player.
@@ -35,7 +35,9 @@ import emoji
 
 from mypackage.pickups import (pickup_list, chest_list, key_list,
                                fertile_generate, fertile)
+
 from mypackage.my_base_functions import press_continue
+
 # Access constants
 from mypackage.constants import (GRACE_START, STEPS_START,
                                  SCORE_START, NEG_START,
@@ -168,7 +170,7 @@ class Player:
 
 
     def check_key(self, g, name):
-        """Use to handle of gamer finds a key.
+        """Use to handle if gamer finds a key.
 
         Exam Version 2: K (Add keys to the board)
         """

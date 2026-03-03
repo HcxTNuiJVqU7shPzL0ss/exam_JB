@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, move_player_commands.
 
 Use to handle move player commands.
 Regarding exam requirements, this file implements:

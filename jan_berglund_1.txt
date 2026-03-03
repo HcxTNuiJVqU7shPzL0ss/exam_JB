@@ -85,7 +85,7 @@ O, S
 
 ---
 
-Student == **_gnoff_**
+Student == gnoff
 
 ---
 

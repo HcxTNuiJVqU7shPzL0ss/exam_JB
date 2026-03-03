@@ -8,7 +8,7 @@
 Student: Jan Berglund (gnoff)  
 
 For more information regarding my implementation, 
-and how to run the game, see:
+and how to run the game, see:  
 [jan_berglund_1.txt](./jan_berglund_1.txt)  
 
 For more information regarding requirements, see:  

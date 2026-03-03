@@ -1,4 +1,4 @@
-"""Module for Lesson 02, Exam.
+"""Module for Lesson 02, Exam, pickups.
 
 Pickups view.
 Regarding exam requirements, this file implements:
@@ -109,7 +109,7 @@ key_list = [Item(type_i = KEY_T, name = 'Skeleton Key',
             Item(type_i = KEY_T, name = 'Skeleton Key',
                   value = KEY_V, symbol = KEY_S)]
 
-# Use to collect all board items in one list
+# Use to collect all (at start) board items in one list
 place_list = pickup_list + trap_list + chest_list + key_list
 
 # Used for fertile addons

@@ -26,6 +26,7 @@ Version 3 - S
 
 # Access constants
 from mypackage.constants import WIDTH, HEIGHT
+
 # Access Grid and test file p (player)
 from ..src.mypackage.grid import Grid
 from .test_player import p

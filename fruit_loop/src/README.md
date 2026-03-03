@@ -1,17 +1,21 @@
 
-# Fruit Loop  
+# Src  
 
 ---
 
 ## Folder Explanation  
 
-This folder is the base for the game.  
+This folder contains all used source code for the game, located 
+under directory: mypackage.  
 
-In ```src``` folder, all code for the game can be found.  
-It is also from where the game is recommended to run.  
+This is also the path you are recommended to be at when running 
+the game.  
 
-In ```tests``` folder, all code for implemented unit tests for 
-the game can be found.  
+---
+
+## Running the game  
+
+When on this path, run the game as of ```python -m mypackage.game```  
 
 ---
 
