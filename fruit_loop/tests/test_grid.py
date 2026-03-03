@@ -163,7 +163,7 @@ def test_get_random_x():
     Run 100 times, just because.
     """
     start = 1
-    for i in range(start, 101):
+    for _ in range(start, 101):
         got_x = g.get_random_x()
         assert start <= got_x < WIDTH
 
@@ -174,7 +174,7 @@ def test_get_random_y():
     Run 100 times, just because.
     """
     start = 1
-    for i in range(start, 101):
+    for _ in range(start, 101):
         got_y = g.get_random_y()
         assert start <= got_y < HEIGHT
 

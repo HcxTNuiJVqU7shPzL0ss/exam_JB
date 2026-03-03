@@ -143,7 +143,7 @@ def test_handle_lava_score__no_grace_no_negative_default(capsys):
 
     # With grace_cnt at 0, negative not allowed,
     # check that score does not decrease
-    for i in range(1, 11):
+    for _ in range(1, 11):
         p.handle_lava_score(grace=False)
         assert p.score == SCORE_START
 

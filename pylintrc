@@ -4,4 +4,3 @@ init-hook=
     except ImportError: pass
     else: pylint_venv.inithook()
 [MESSAGES CONTROL]
-disable=unused-variable

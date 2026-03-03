@@ -87,7 +87,7 @@ class Grid:
         """Use so the board can be displayed with print(grid)."""
         xs = ''
         for y, row in enumerate(self.data):
-            for x, cell in enumerate(row):
+            for x, _ in enumerate(row):
                 if x == self.player.pos_x and y == self.player.pos_y:
                     xs += self.gamer
                 else:

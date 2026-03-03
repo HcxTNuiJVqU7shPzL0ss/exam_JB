@@ -96,9 +96,9 @@ trap_list = [Item(type_i = TRAP_T, name = 'Bear trap',
 # If you land on a chest, and have at least one key in inventory,
 # you will pick up the chest, value 100 points
 # The key will be used up
-chest_list = [Item(type_i = CHEST_T, name = 'Earth chest',
+chest_list = [Item(type_i = CHEST_T, name = 'Earth Chest',
                    value = CHEST_V, symbol = CHEST_S),
-              Item(type_i = CHEST_T, name = 'Wind chest',
+              Item(type_i = CHEST_T, name = 'Wind Chest',
                    value = CHEST_V, symbol = CHEST_S)]
 
 # Use to add keys on the grid
@@ -106,9 +106,9 @@ chest_list = [Item(type_i = CHEST_T, name = 'Earth chest',
 # If you land on a chest, and have at least one key in inventory,
 # you will pick up the chest
 # The key will be used up
-key_list = [Item(type_i = KEY_T, name = 'key',
+key_list = [Item(type_i = KEY_T, name = 'Skeleton Key',
                  value = KEY_V, symbol = KEY_S),
-            Item(type_i = KEY_T, name = 'key',
+            Item(type_i = KEY_T, name = 'Skeleton Key',
                   value = KEY_V, symbol = KEY_S)]
 
 # Use to collect all board items in one list
@@ -116,11 +116,11 @@ place_list = pickup_list + trap_list + chest_list + key_list
 
 # Used for fertile addons
 # Exam Version 2: L (Every 25 step adds new points item to board)
-fertile = [Item(type_i = FERT_T, name = 'mango',
+fertile = [Item(type_i = FERT_T, name = 'Mango',
                 value = FERT_V, symbol = FERT_S),
-           Item(type_i = FERT_T, name = 'lime',
+           Item(type_i = FERT_T, name = 'Lime',
                 value = FERT_V, symbol = FERT_S),
-           Item(type_i = FERT_T, name = 'orange',
+           Item(type_i = FERT_T, name = 'Orange',
                 value = FERT_V, symbol = FERT_S)
            ]
 
