@@ -34,7 +34,7 @@ Börja med att läsa igenom hela uppgiften,
 sedan hittar du länk till ett kodprojekt längre ner.  
 <BR>
 
-![Exam GUI example](exam_gui_example.png "Exam GUI example")
+![Exam GUI example](./img/exam_gui_example.png "Exam GUI example")
 <BR>  
 
 ---
@@ -180,7 +180,7 @@ funktioner och ändra fritt i projektet.
 Så här ser det ut i PyCharm:
 <BR>
 
-![Run config example](pycharm_run_config_example.png "Run config example")
+![Run config example](./img/pycharm_run_config_example.png "Run config example")
 <BR>  
 
 ---
@@ -222,7 +222,7 @@ Du måste skapa en egen kopia.
 Klicka på knappen Fork:  
 <BR>
 
-![GitHub Fork](github_fork.png "GitHub Fork")
+![GitHub Fork](./img/github_fork.png "GitHub Fork")
 <BR>  
 
 Kontrollera att ditt repo är publikt innan du lämnar in. 
