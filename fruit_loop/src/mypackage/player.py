@@ -152,7 +152,7 @@ class Player:
                 # Ensure this happens
                 if not self.use_neg and self.score < 0:
                     self.score += 1
-        print(f'Grace period is at {self.grace_cnt}')
+        print(f'\nGrace period is at {self.grace_cnt}')
 
 
     def check_trap(self, name, value):
@@ -224,38 +224,40 @@ class Player:
         # Check if there is an item on coordinates
         maybe_item = g.get(self.pos_x + x,
                            self.pos_y + y)
-        # Move player
-        self.move(x, y)
-        self.steps += 1
 
-        # Check if there is something to pick up
-        if isinstance(maybe_item, item):
-            print('')
-            # we found something, handle score
-            if maybe_item.type in (pickup_list[0].type,
-                                   fertile[0].type):
-                self.score += maybe_item.value
-                print(f"You found a {maybe_item.name}, "
-                      f"+{maybe_item.value} points.")
-                # Clear the picked up item on board
-                g.clear(self.pos_x, self.pos_y)
-                # Exam Version 1: E (Added to inventory)
-                self.inventory.append(maybe_item.name)
-                grace_moves = True
-            elif maybe_item.type == chest_list[0].type:
-                self.check_chest(g, maybe_item.name,
-                                 maybe_item.value)
-            elif maybe_item.type in (key_list[0].type,
-                                     pickaxe_list[0].type):
-                self.check_key_pickaxe(g, maybe_item.name)
-            else:
-                self.check_trap(maybe_item.name, maybe_item.value)
-            print('')
+        # Move player, if coordinates not (0,0)
+        if not (x == 0 and y == 0):
+            self.move(x, y)
+            self.steps += 1
 
-        # Handle "The Floor is Lava"
-        self.handle_lava_score(grace_moves)
+            # Check if there is something to pick up
+            if isinstance(maybe_item, item):
+                print('')
+                # we found something, handle score
+                if maybe_item.type in (pickup_list[0].type,
+                                       fertile[0].type):
+                    self.score += maybe_item.value
+                    print(f"You found a {maybe_item.name}, "
+                          f"+{maybe_item.value} points.")
+                    # Clear the picked up item on board
+                    g.clear(self.pos_x, self.pos_y)
+                    # Exam Version 1: E (Added to inventory)
+                    self.inventory.append(maybe_item.name)
+                    grace_moves = True
+                elif maybe_item.type == chest_list[0].type:
+                    self.check_chest(g, maybe_item.name,
+                                     maybe_item.value)
+                elif maybe_item.type in (key_list[0].type,
+                                         pickaxe_list[0].type):
+                    self.check_key_pickaxe(g, maybe_item.name)
+                else:
+                    self.check_trap(maybe_item.name, maybe_item.value)
+                print('')
 
-        # Handle fertile addition every 25 step
-        if self.steps % 25 == 0:
-            fertile_generate(g)
-            press_continue()
+            # Handle "The Floor is Lava"
+            self.handle_lava_score(grace_moves)
+
+            # Handle fertile addition every 25 step
+            if self.steps % 25 == 0:
+                fertile_generate(g)
+                press_continue()

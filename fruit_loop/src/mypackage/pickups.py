@@ -157,7 +157,7 @@ def place_items(grid, addon, fertile_y):
             if fertile_y:
                 new_fruit = random.choice(fertile)
                 grid.set(x, y, new_fruit)
-                print(f'New item {new_fruit} has been added to: '
+                print(f'\nNew item {new_fruit} has been added to: '
                       f'x:{x}, y:{y}!')
             # Add items at start
             else:
