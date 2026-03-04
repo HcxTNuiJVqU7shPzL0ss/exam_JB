@@ -139,34 +139,47 @@ fertile = [Item(type_i = FERT_T, name = 'Mango',
            ]
 
 
+def place_items(grid, addon, fertile_y):
+    """Use to create items on random positions.
+
+    At startup:
+    Place the items from the "place_list" on the board grid.
+    When fertile happens:
+    Place the generated fertile item.
+    """
+    while True:
+        # Randomly generate a position until there is
+        # one not previously used
+        x = grid.get_random_x()
+        y = grid.get_random_y()
+        if grid.is_empty(x, y):
+            # Add fertile
+            if fertile_y:
+                new_fruit = random.choice(fertile)
+                grid.set(x, y, new_fruit)
+                print(f'New item {new_fruit} has been added to: '
+                      f'x:{x}, y:{y}!')
+            # Add items at start
+            else:
+                grid.set(x, y, addon)
+            # Abort the while loop, continue
+            # with the next iteration of the for loop
+            break
+
+
 def randomize(grid):
     """Use to create items on random positions.
 
     Place the items from the "place_list" on the board grid.
     """
     for item in place_list:
-        while True:
-            # Randomly generate a position until there is
-            # one not previously used
-            x = grid.get_random_x()
-            y = grid.get_random_y()
-            if grid.is_empty(x, y):
-                grid.set(x, y, item)
-                # Abort the while loop, continue
-                # with the next iteration of the for loop
-                break
+        place_items(grid, item, False)
+
 
 def fertile_generate(grid):
     """Use to place fertile items.
 
     Exam Version 2: L (Every 25 step adds new points item to board)
     """
-    while True:
-        x = grid.get_random_x()
-        y = grid.get_random_y()
-        if grid.is_empty(x, y):
-            new_fruit = random.choice(fertile)
-            grid.set(x, y, new_fruit)
-            print(f'New item {new_fruit} has been added to: '
-                  f'x:{x}, y:{y}!')
-            break
+    new_fruit = random.choice(fertile)
+    place_items(grid, new_fruit, True)

@@ -43,19 +43,20 @@ def move_commands(command_check, player_active, g_active):
     # Ensure movement will only happen in one direction, x or y
     x = 0
     y = 0
+
+    # Possible move coordinates set below, depending on command
+    if command_check == RIGHT:      # move right
+        x = 1
+    elif command_check == LEFT:     # move left
+        x = -1
+    elif command_check == UP:       # move up
+        y = -1
+    elif command_check == DOWN:     # move down
+        y = 1
+
     # Check if allowed to move, or a wall
     if not player_active.can_move(x, y, g_active):
         x = 0
         y = 0
-    # Move happens below, depending on command
-    else:
-        if command_check == RIGHT:      # move right
-            x = 1
-        elif command_check == LEFT:     # move left
-            x = -1
-        elif command_check == UP:       # move up
-            y = -1
-        elif command_check == DOWN:     # move down
-            y = 1
 
     return [x, y]

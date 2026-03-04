@@ -55,9 +55,9 @@ https://github.com/HcxTNuiJVqU7shPzL0ss/exam_JB
   --> Done
 
 06: Filen ska berätta vilka av kraven du har arbetat med
-A, B, C, D, E, F, G, H
-I, K, L
-O, S
+Version 1: A, B, C, D, E, F, G, H
+Version 2: I, J, K, L
+Version 3: O, S
 
   --> Done
 
