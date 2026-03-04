@@ -8,6 +8,7 @@ Version 1 - C
 Version 1 - E
 Version 1 - G
 Version 2 - I
+Version 2 - J
 Version 2 - K
 Version 3 - O
 """
@@ -34,7 +35,8 @@ import emoji
 
 
 from mypackage.pickups import (pickup_list, chest_list, key_list,
-                               fertile_generate, fertile)
+                               pickaxe_list, fertile_generate,
+                               fertile)
 
 from mypackage.my_base_functions import press_continue
 
@@ -94,7 +96,7 @@ class Player:
         self.pos_y += dy
 
 
-    def can_move(self, x, y, grid):
+    def can_move(self, x, y, g):
         """Use to check that you can move.
 
         Exam Version 1: C (Player not allowed
@@ -102,13 +104,32 @@ class Player:
         """
         check_x = self.pos_x + x
         check_y = self.pos_y + y
-        check_wall = grid.get(check_x, check_y)
+        check_wall = g.get(check_x, check_y)
+
+        wall_print = '\nNot allowed to walk through walls!'
+        breach_print = (f'\nYou have breached an unstable wall!\n'
+                        f'Your {pickaxe_list[0].name} has been '
+                        f'used.')
 
         # Return True if no wall is found
-        if check_wall in (grid.wall, grid.unstable_wall):
-            print('\nNot allowed to walk through walls!')
+        if check_wall in (g.wall, g.unstable_wall):
+            # Either no pickaxe found, or impassable wall
+            if (pickaxe_list[0].name not in self.inventory or
+                    check_wall == g.wall):
+                print(wall_print)
+                press_continue()
+                return False
+
+            # Pickaxe found and move to unstable wall
+            # Breach and move
+            print(breach_print)
+            # Clear the breached wall on board
+            g.clear(check_x, check_y)
+            # Remove pickaxe from inventory (first occurrence)
+            self.inventory.remove(pickaxe_list[0].name)
             press_continue()
-            return False
+            return True
+
         return True
 
 
@@ -169,13 +190,18 @@ class Player:
             press_continue()
 
 
-    def check_key(self, g, name):
-        """Use to handle if gamer finds a key.
+    def check_key_pickaxe(self, g, name):
+        """Use to handle if gamer finds a key or a pickaxe.
 
         Exam Version 2: K (Add keys to the board)
+        Exam Version 2: J (Add pickaxes to the board)
         """
-        print(f'You found a {name}!\n'
-              f'Can you also find a {chest_list[0].type}?')
+        print(f'You found a {name}!')
+        if name == key_list[0].name:
+            print(f'Can you also find a {chest_list[0].type}?')
+        else:
+            print(f'You can now breach one (1) unstable wall.')
+
         # Clear the picked up item on board
         g.clear(self.pos_x, self.pos_y)
         # Add to inventory
@@ -221,8 +247,9 @@ class Player:
                 elif maybe_item.type == chest_list[0].type:
                     self.check_chest(g, maybe_item.name,
                                      maybe_item.value)
-                elif maybe_item.type == key_list[0].type:
-                    self.check_key(g, maybe_item.name)
+                elif maybe_item.type in (key_list[0].type,
+                                         pickaxe_list[0].type):
+                    self.check_key_pickaxe(g, maybe_item.name)
                 else:
                     self.check_trap(maybe_item.name, maybe_item.value)
                 print('')

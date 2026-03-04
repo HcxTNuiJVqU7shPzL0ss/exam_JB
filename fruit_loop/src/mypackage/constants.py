@@ -105,10 +105,22 @@ CHEST_S = 'c'
 # Keys items list
 # Type
 KEY_T = 'key'
+# Name
+KEY_N = 'Skeleton Key'
 # Value
 KEY_V = 0
 # Symbol
 KEY_S = 'k'
+
+# Pickaxe items list
+# Type
+PICK_T = 'pickaxe'
+# Name
+PICK_N = 'Pickaxe'
+# Value
+PICK_V = 0
+# Symbol
+PICK_S = 'p'
 
 # Fertile items list
 # Type

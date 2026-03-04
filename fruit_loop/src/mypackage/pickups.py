@@ -4,6 +4,7 @@ Pickups view.
 Regarding exam requirements, this file implements:
 Version 1 - D
 Version 2 - I
+Version 2 - J
 Version 2 - K
 Version 2 - L
 """
@@ -36,7 +37,8 @@ from dataclasses import dataclass
 from mypackage.constants import (OG_T, OG_V, OG_V_F, OG_S,
                                  TRAP_T, TRAP_V, TRAP_S,
                                  CHEST_T, CHEST_V, CHEST_S,
-                                 KEY_T, KEY_V, KEY_S,
+                                 KEY_T, KEY_N, KEY_V, KEY_S,
+                                 PICK_T, PICK_N, PICK_V, PICK_S,
                                  FERT_T, FERT_V, FERT_S)
 
 
@@ -104,13 +106,27 @@ chest_list = [Item(type_i = CHEST_T, name = 'Earth Chest',
 # If you land on a chest, and have at least one key in inventory,
 # you will pick up the chest
 # The key will be used up
-key_list = [Item(type_i = KEY_T, name = 'Skeleton Key',
+key_list = [Item(type_i = KEY_T, name = KEY_N,
                  value = KEY_V, symbol = KEY_S),
-            Item(type_i = KEY_T, name = 'Skeleton Key',
+            Item(type_i = KEY_T, name = KEY_N,
                   value = KEY_V, symbol = KEY_S)]
 
+# Used to add pickups to the grid
+# Exam Version 2: J (Add pickaxes to the board)
+# Next time you walk into a wall, the pickaxe is used,
+# and the wall is removed.
+# Note: Only "unstable walls" can be removed, not the
+# walls around the board.
+# 2 pickaxes are available, less than the amount of
+# unstable walls.
+pickaxe_list = [Item(type_i = PICK_T, name = PICK_N,
+                     value = PICK_V, symbol = PICK_S),
+                Item(type_i = PICK_T, name = PICK_N,
+                     value = PICK_V, symbol = PICK_S)]
+
 # Use to collect all (at start) board items in one list
-place_list = pickup_list + trap_list + chest_list + key_list
+place_list = (pickup_list + trap_list + chest_list +
+              key_list + pickaxe_list)
 
 # Used for fertile addons
 # Exam Version 2: L (Every 25 step adds new points item to board)

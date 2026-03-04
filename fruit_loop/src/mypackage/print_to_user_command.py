@@ -24,7 +24,7 @@ Version 1 - F
 
 
 from mypackage.pickups import (pickup_list, trap_list,
-                               chest_list, key_list)
+                               chest_list, key_list, pickaxe_list)
 
 from mypackage.my_base_functions import press_continue, y_or_n
 
@@ -80,17 +80,24 @@ def print_symbols(g):
           f'Around the edges are impassable walls, signified '
           f'by the following:'
           f'{HIGHLIGHT + g.wall + HIGHLIGHT}\n\n'
-          f'There are a few internal walls, which cannot be '
-          f'passed, unless you have found a pickaxe. These '
-          f'internal walls looks like this:'
+          f'There are a few unstable walls, which also cannot be '
+          f'passed, unless you have found a {pickaxe_list[0].name}.'
+          f' These internal walls looks like this:'
           f'{HIGHLIGHT + g.unstable_wall + HIGHLIGHT}\n\n'
+          f'For breaching an unstable wall, you need '
+          f'to first find a {pickaxe_list[0].name}.\n'
+          f'Note that this item will be used up when breaching a '
+          f'wall, and that there are less of these items than there '
+          f'are walls, so use only when needed.\n'
+          f'The item looks like this: '
+          f'{HIGHLIGHT + pickaxe_list[0].symbol + HIGHLIGHT}\n\n'
           f'The goal of this exciting game is to pick up things '
           f'from the board, items can be found where you see:'
           f'{HIGHLIGHT + pickup_list[0].symbol + HIGHLIGHT}\n\n'
           f'There are chests on the board, marked with'
           f'{HIGHLIGHT + chest_list[0].symbol + HIGHLIGHT.rstrip()},'
           f' to be able to pick up a chest, you '
-          f'first need a key, these are marked with'
+          f'first need a {key_list[0].name}, these are marked with'
           f'{HIGHLIGHT + key_list[0].symbol + HIGHLIGHT}\n\n'
           f'Try to avoid the traps, marked with'
           f'{HIGHLIGHT + trap_list[0].symbol + HIGHLIGHT}')
