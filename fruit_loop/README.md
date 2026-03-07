@@ -7,7 +7,7 @@
 
 This folder is the base for the game.  
 
-In ```src``` folder, all code for the game can be found.  
+Under ```src``` folder, all code for the game can be found.  
 It is also from where the game is recommended to run.  
 
 In ```tests``` folder, all code for implemented unit tests for 

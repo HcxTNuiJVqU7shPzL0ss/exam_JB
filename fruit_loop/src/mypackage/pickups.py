@@ -62,11 +62,11 @@ class Item:
         self.symbol = symbol
 
     def __str__(self):
-        """Use to print."""
+        """Use to print item symbol on the board."""
         return self.symbol
 
 
-# Use to add OG fruits and veggies
+# Use to add OG fruits and veggies, etc.
 # These give points if/when picked up
 # Exam Version 1: D (Value is 20 for fruits, not 10)
 # As of random AI and google, the following are
@@ -111,7 +111,7 @@ key_list = [Item(type_i = KEY_T, name = KEY_N,
             Item(type_i = KEY_T, name = KEY_N,
                   value = KEY_V, symbol = KEY_S)]
 
-# Used to add pickups to the grid
+# Used to add pickaxes (spade) to the grid
 # Exam Version 2: J (Add pickaxes to the board)
 # Next time you walk into a wall, the pickaxe is used,
 # and the wall is removed.
@@ -155,15 +155,13 @@ def place_items(grid, addon, fertile_y):
         if grid.is_empty(x, y):
             # Add fertile
             if fertile_y:
-                new_fruit = random.choice(fertile)
-                grid.set(x, y, new_fruit)
-                print(f'\nNew item {new_fruit} has been added to: '
+                grid.set(x, y, addon)
+                print(f'\nNew item {addon} has been added to: '
                       f'x:{x}, y:{y}!')
             # Add items at start
             else:
                 grid.set(x, y, addon)
-            # Abort the while loop, continue
-            # with the next iteration of the for loop
+            # Abort the while loop
             break
 
 

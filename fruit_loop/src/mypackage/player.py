@@ -137,6 +137,7 @@ class Player:
         """Use to handle score for The Floor is Lava.
 
         If on "Grace Period", does not lose points.
+        Exam Version 1: G (Lose 1 point per step)
         """
         if grace:
             # Found an item, add grace period of 5
@@ -149,7 +150,7 @@ class Player:
                 # Exam Version 1: G (Lose 1 point per step)
                 self.score -= 1
                 # If gamer has opted to not allow score below 0,
-                # Ensure this happens
+                # ensure this happens
                 if not self.use_neg and self.score < 0:
                     self.score += 1
         print(f'\nGrace period is at {self.grace_cnt}')
@@ -216,6 +217,9 @@ class Player:
         inventory, plus print info to user.
         Also handles "The Floor is Lava" score reduction,
         unless gamer is on "Grace Period".
+        Exam Version 1: E (Added to inventory)
+        Exam Version 3: O (When you pick something up, you can
+        move 5 steps without lava damage - Grace Period)
         """
         # Exam Version 3: O (When you pick something up, you can
         # move 5 steps without lava damage - Grace Period)
@@ -257,7 +261,7 @@ class Player:
             # Handle "The Floor is Lava"
             self.handle_lava_score(grace_moves)
 
-            # Handle fertile addition every 25 step
+            # Handle fertile addition every 25th step
             if self.steps % 25 == 0:
                 fertile_generate(g)
                 press_continue()

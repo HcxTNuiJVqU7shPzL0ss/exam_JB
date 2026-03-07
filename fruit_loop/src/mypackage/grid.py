@@ -51,7 +51,7 @@ class Grid:
         Constructor (initializer) automatically called when
         creating a new instance of this class.
         """
-        # The board if stored in a list of lists.
+        # The board is stored in a list of lists.
         # List comprehension is used to place the sign for
         # "empty" on each place on the board.
         self.width = width
@@ -62,11 +62,28 @@ class Grid:
 
 
     def get(self, x, y):
-        """Use to get what is on a certain position."""
+        """Use to get what is on a certain position.
+
+        Return the value at (x, y).
+        Important:
+        The grid is stored as a list of rows (data[row][column]).
+        Therefore:
+        y → row index
+        x → column index
+        This is why we access data[y][x] instead of data[x][y].
+        """
         return self.data[y][x]
 
     def set(self, x, y, value):
-        """Use to set what is on a certain position."""
+        """Use to set what is on a certain position.
+
+        Set the value at (x, y).
+        The coordinate system uses (x, y), but the underlying
+        structure is row-major (list of rows).
+        So the correct indexing order is:
+        data[y][x]
+        Reversing this will cause out-of-range errors.
+        """
         self.data[y][x] = value
 
     def set_player(self, player):
@@ -97,13 +114,28 @@ class Grid:
     def make_walls(self):
         """Use to create walls."""
         # First two are for walls around the board
+
+        # Create the left and right border walls.
+        # Loop over all rows (y = 0 → height-1)
+        # and place a wall at:
+        #   (0, y)               → left edge
+        #   (width-1, y)         → right edge
+        # Because the grid is stored as data[y][x],
+        # 'i' represents the row index.
         for i in range(self.height):
             self.set(0, i, self.wall)
             self.set(self.width - 1, i, self.wall)
 
+        # Create the top and bottom border walls.
+        # Loop over all columns (x = 1 → width-2)
+        # and place a wall at:
+        #   (x, 0)               → top edge
+        #   (x, height-1)        → bottom edge
+        # Here 'j' represents the column index.
         for j in range(1, self.width - 1):
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
+
 
         # Creates extra "inner" walls
         # Exam Version 1: H (Use for loops in grid.py to create more

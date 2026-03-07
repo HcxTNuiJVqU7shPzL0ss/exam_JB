@@ -43,7 +43,7 @@ def test_print_status__dummy_values(capsys):
     Use capsys to capture stdout/stderr output.
     Test Player method "print_status"
     """
-    p.print_status(game_grid='dummy') # Dummy for print
+    p.print_status(game_grid = 'dummy') # Dummy for print
 
     captured = capsys.readouterr()
     output = captured.out
@@ -65,7 +65,7 @@ def test_lava_handling__false():
     Test Player method "lava_handling"
     """
     expected = NEG_START
-    p.set_lava_handling(lava_neg=expected)
+    p.set_lava_handling(lava_neg = expected)
     actual = p.use_neg
     assert actual == expected
 
@@ -76,12 +76,12 @@ def test_lava_handling__true():
     Test Player method "lava_handling"
     """
     expected = not NEG_START
-    p.set_lava_handling(lava_neg=expected)
+    p.set_lava_handling(lava_neg = expected)
     actual = p.use_neg
     assert actual is expected
 
     # Reset to default
-    p.set_lava_handling(lava_neg=NEG_START)
+    p.set_lava_handling(lava_neg = NEG_START)
     actual = p.use_neg
     assert actual is NEG_START
 
@@ -98,13 +98,13 @@ def test_move__x1_y2():
     # Change coordinates
     expected_x = 1
     expected_y = 2
-    p.move(dx=expected_x, dy=expected_y)
+    p.move(dx = expected_x, dy = expected_y)
     # Check that change happened
     assert p.pos_x == expected_x
     assert p.pos_y == expected_y
 
     # Reset to default
-    p.move(dx=-expected_x, dy=-expected_y)
+    p.move(dx = -expected_x, dy = -expected_y)
     # Check that change happened
     assert p.pos_x == X_START
     assert p.pos_y == Y_START
@@ -123,7 +123,7 @@ def test_handle_lava_score__no_grace_no_negative_default(capsys):
     assert p.use_neg is NEG_START
 
     # Call the method without finding an item
-    p.handle_lava_score(grace=NEG_START)
+    p.handle_lava_score(grace = NEG_START)
 
     # Check grace_cnt and score still at 0
     assert p.grace_cnt == GRACE_START
@@ -138,7 +138,7 @@ def test_handle_lava_score__no_grace_no_negative_default(capsys):
     # With grace_cnt at 0, negative not allowed,
     # check that score does not decrease
     for _ in range(1, 11):
-        p.handle_lava_score(grace=False)
+        p.handle_lava_score(grace = False)
         assert p.score == SCORE_START
 
 
@@ -153,7 +153,7 @@ def test_handle_lava_score__yes_grace_yes_negative_fake_score(capsys):
     fake_score_set = 1
 
     # Call the method when finding an item
-    p.handle_lava_score(grace=True)
+    p.handle_lava_score(grace = True)
 
     # Check that grace_cnt is now as set
     assert p.grace_cnt == grace_set
@@ -171,7 +171,7 @@ def test_handle_lava_score__yes_grace_yes_negative_fake_score(capsys):
 
     for i in range(1, 6):
         # Call the method without finding an item
-        p.handle_lava_score(grace=False)
+        p.handle_lava_score(grace = False)
 
         # Check that grace_cnt decreases
         assert p.grace_cnt == grace_set - i
@@ -186,7 +186,7 @@ def test_handle_lava_score__yes_grace_yes_negative_fake_score(capsys):
 
     for i in range(1, 3):
         # With grace_cnt now at 0, check that score decrease
-        p.handle_lava_score(grace=False)
+        p.handle_lava_score(grace = False)
         assert p.score == fake_score_set - i
 
     # Back to default
@@ -209,7 +209,7 @@ def test_check_trap__dummy_no_points_no_negative(capsys):
     # Set dummy for test
     dummy_name = 'trap'
     dummy_value = -10
-    p.check_trap(name=dummy_name, value=dummy_value)
+    p.check_trap(name = dummy_name, value = dummy_value)
 
     captured = capsys.readouterr()
     output = captured.out
@@ -241,7 +241,7 @@ def test_check_trap__dummy_with_points_no_negative():
     p.score = dummy_score
     assert p.score == dummy_score
 
-    p.check_trap(name=dummy_name, value=dummy_value)
+    p.check_trap(name = dummy_name, value = dummy_value)
 
     # Check that score is now 0
     assert p.score == SCORE_START
@@ -253,7 +253,7 @@ def test_check_trap__dummy_with_points_no_negative():
     p.score = dummy_score
     assert p.score == dummy_score
 
-    p.check_trap(name=dummy_name, value=dummy_value)
+    p.check_trap(name = dummy_name, value = dummy_value)
 
     # Check that score decreased by trap (dummy) value
     assert p.score == dummy_score + dummy_value

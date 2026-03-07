@@ -81,12 +81,12 @@ GAMER = '@'
 # Type
 OG_T = 'og'
 # Value
-OG_V = 10
-OG_V_F = 20
+OG_V = 10     # Not a fruit
+OG_V_F = 20   # Is a fruit
 # Symbol
 OG_S = '?'
 
-# Traps items list
+# Trap items list
 # Type
 TRAP_T = 'trap'
 # Value
@@ -102,7 +102,7 @@ CHEST_V = 100
 # Symbol
 CHEST_S = 'c'
 
-# Keys items list
+# Key items list
 # Type
 KEY_T = 'key'
 # Name
@@ -126,6 +126,6 @@ PICK_S = 'p'
 # Type
 FERT_T = 'fertile'
 # Value
-FERT_V = 25
+FERT_V = 25   # Even if a fruit, higher score for fertile
 # Symbol
 FERT_S = '*'
